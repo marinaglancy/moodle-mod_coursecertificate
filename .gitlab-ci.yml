@@ -48,7 +48,7 @@ codecheck:
     #- . check moodle-plugin-ci phpmd
     - . check moodle-plugin-ci codechecker --max-warnings 0
     - moodle-plugin-ci phpdoc || true # TODO why does it fail suddenly?
-    - moodle-plugin-ci validate || true # TODO why does it fail suddenly?
+    - . check moodle-plugin-ci validate
     - . check moodle-plugin-ci savepoints
     - . check moodle-plugin-ci mustache
     - . check moodle-plugin-ci grunt --max-lint-warnings 0
