@@ -40,6 +40,8 @@ jobs:
           - php: '8.0'
             moodle-branch: 'MOODLE_311_STABLE'
             database: mariadb
+            extensions: xmlrpc-beta
+            ini-values: max_input_vars=5000
 
     steps:
       - name: Check out repository code
