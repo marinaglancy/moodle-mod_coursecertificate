@@ -31,17 +31,19 @@ jobs:
           - php: '7.3'
             moodle-branch: 'MOODLE_310_STABLE'
             database: mariadb
+            extensions:
           - php: '7.2'
             moodle-branch: 'MOODLE_39_STABLE'
             database: pgsql
+            extensions:
           - php: '7.3'
             moodle-branch: 'MOODLE_311_STABLE'
             database: pgsql
+            extensions:
           - php: '8.0'
             moodle-branch: 'MOODLE_311_STABLE'
             database: mariadb
             extensions: xmlrpc-beta
-            ini-values: max_input_vars=5000
 
     steps:
       - name: Check out repository code
@@ -53,6 +55,8 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
+          extensions: ${{ matrix.extensions }}
+          ini-values: max_input_vars=5000
           coverage: none
 
       - name: Initialise moodle-plugin-ci
