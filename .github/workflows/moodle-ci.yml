@@ -8,7 +8,7 @@ jobs:
 
     services:
       postgres:
-        image: postgres:10
+        image: postgres:12
         env:
           POSTGRES_USER: 'postgres'
           POSTGRES_HOST_AUTH_METHOD: 'trust'
@@ -37,7 +37,7 @@ jobs:
             database: mariadb
             extensions: xmlrpc-beta
           - php: '7.4'
-            moodle-branch: 'master'
+            moodle-branch: 'master' # TODO WP-3904 change to MOODLE_401_STABLE
             database: pgsql
             extensions: xmlrpc-beta
 
